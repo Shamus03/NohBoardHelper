@@ -1,4 +1,12 @@
-// Numbers
+# Dictionary file for converting Java's key IDs to
+# the key IDs used by NohBoard
+#
+# Lines are in the format:
+# JAVA_ID NOHBOARD_ID LOWERCASE_CHAR UPPERCASE_CHAR CHANGE_ON_CAPS SMALL_TEXT
+#
+# Any line not in this format will be ignored.
+
+# Numbers
 48 48 0 ) 0 0
 49 49 1 ! 0 0
 50 50 2 @ 0 0
@@ -10,7 +18,7 @@
 56 56 8 * 0 0
 57 57 9 ( 9 9
 
-// Letters
+# Letters
 65 65 a A 1 0
 66 66 b B 1 0
 67 67 c C 1 0
@@ -38,13 +46,13 @@
 89 89 y Y 1 0
 90 90 z Z 1 0
 
-// Arrow Keys
+# Arrow Keys
 37 37 %left% %left% 0 1
 38 38 %up% %up% 0 1
 39 39 %right% %right% 0 1
 40 40 %down% %down% 0 1
 
-// Numpad
+# Numpad
 96 96 0 0 0 0
 97 97 1 1 0 0
 98 98 2 2 0 0
@@ -62,7 +70,7 @@
 111 111 / / 0 0
 144 144 Num Num 0 1
 
-// Function Keys
+# Function Keys
 112 112 F1 F1 0 1
 113 113 F2 F2 0 1
 114 114 F3 F3 0 1
@@ -76,7 +84,7 @@
 122 122 F11 F11 0 1
 123 123 F12 F12 0 1
 
-// Special
+# Special
 10 13 %return% %return% 0 0
 210 1025 Enter Enter 0 1
 110 110 . . 0 0
