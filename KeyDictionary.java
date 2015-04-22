@@ -32,6 +32,7 @@ public class KeyDictionary
                     dictionary.put(keyCode,
                         new DictionaryEntry(newCode, lineEnd));
                 }
+                // Handles comments and any invalid entries
                 catch (Exception e)
                 {
                     fileScan.nextLine();
