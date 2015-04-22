@@ -7,7 +7,7 @@ public class KeyBox extends JPanel
     private static int DEFAULT_WITDH = 1;
     private static int DEFAULT_HEIGHT = 1;
     private static int BORDER_SIZE = 2;
-    private static int BOX_SIZE = 43;
+    public static int BOX_SIZE = 43;
     private static int PADDING = 1;
     private static int MOD = (BOX_SIZE + PADDING) / 2;
 
@@ -47,7 +47,7 @@ public class KeyBox extends JPanel
         keyCode = 0;
 
         setBackground(Color.GRAY);
-        setBounds(xPos, yPos, getPixelWidth(), getPixelHeight());
+        setBounds(xPos, yPos, myWidth, myHeight);
         setFocusable(true);
 
         addMouseListener(new KeyBoxMouseListener());
@@ -62,18 +62,8 @@ public class KeyBox extends JPanel
     {
         super.paintComponent(g);
 
-        g.drawString(keyString, getPixelWidth() / 2 - keyString.length() * 3,
-            BOX_SIZE / 2 + 4);
-    }
-
-    public int getPixelWidth()
-    {
-        return myWidth * BOX_SIZE + (myWidth - 1) * PADDING;
-    }
-
-    public int getPixelHeight()
-    {
-        return myHeight * BOX_SIZE + (myHeight - 1) * PADDING;
+        g.drawString(keyString, myWidth / 2 - keyString.length() * 3,
+            myHeight / 2 + 4);
     }
 
     public void remove()
@@ -86,7 +76,7 @@ public class KeyBox extends JPanel
     public String toString()
     {
         return "key " + KeyDictionary.getNewCode(keyCode) + " " + xPos + " "
-            + yPos + " " + getPixelWidth() + " " + getPixelHeight() + " "
+            + yPos + " " + myWidth + " " + myHeight + " "
             + KeyDictionary.getLineEnd(keyCode);
     }
 

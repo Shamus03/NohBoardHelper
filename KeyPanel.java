@@ -11,8 +11,8 @@ public class KeyPanel extends JPanel
     {
         super();
         setLayout(null); // Let the keys arrange themselves
-        width = 1;
-        height = 1;
+        width = KeyBox.BOX_SIZE;
+        height = KeyBox.BOX_SIZE;
 
         addMouseListener(new KeyPanelMouseListener());
 
@@ -35,7 +35,8 @@ public class KeyPanel extends JPanel
         @Override
         public void mouseClicked(MouseEvent e)
         {
-            if (e.getButton() == MouseEvent.BUTTON3)
+            if (width > 10 && height > 10
+                && e.getButton() == MouseEvent.BUTTON3)
             {
                 add(new KeyBox(e.getX(), e.getY(), width, height));
                 repaint();

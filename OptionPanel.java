@@ -121,11 +121,14 @@ public class OptionPanel extends JPanel
             super();
 
             this.mode = mode;
-            this.slider = new JSlider(1, 5, 1);
+            // Measured in half-keys
+            this.slider = new JSlider(0, 14, 2);
 
             JLabel label = new JLabel("Box " + mode);
 
+            slider.setMajorTickSpacing(2);
             slider.setMinorTickSpacing(1);
+            slider.setSnapToTicks(true);
             slider.setPaintTicks(true);
             slider.addChangeListener(new SliderPanelChangeListener());
 
@@ -141,11 +144,16 @@ public class OptionPanel extends JPanel
             {
                 switch (mode)
                 {
+                    // half_boxes * BOX_SIZE / 2 + padding pixels
                     case WIDTH:
-                        keyPanel.setBoxWidth(slider.getValue());
+                        keyPanel.setBoxWidth(slider.getValue()
+                            * KeyBox.BOX_SIZE / 2
+                            + (slider.getValue() - 1)/ 2);
                         break;
                     case HEIGHT:
-                        keyPanel.setBoxHeight(slider.getValue());
+                        keyPanel.setBoxHeight(slider.getValue()
+                            * KeyBox.BOX_SIZE / 2
+                            + (slider.getValue() - 1) / 2);
                 }
             }
         }
